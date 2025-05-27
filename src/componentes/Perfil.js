@@ -73,23 +73,26 @@ export default function Perfil() {
       <TextInput
         style={styles.input}
         placeholder="Nombre"
+        placeholderTextColor="white"
         value={nombre}
         onChangeText={setNombre}
       />
       <TextInput
         style={styles.input}
         placeholder="Fecha de nacimiento (YYYY-MM-DD)"
+        placeholderTextColor="white"
         value={fecha}
         onChangeText={setFecha}
       />
       <TextInput
         style={styles.input}
         placeholder="Teléfono"
+        placeholderTextColor="white"
         value={telefono}
         onChangeText={setTelefono}
         keyboardType="phone-pad"
       />
-      <Button title="Guardar cambios" onPress={actualizarDatos} />
+      <Button title="Guardar cambios" onPress={actualizarDatos} color="black"  />
     </View>
   );
 }
@@ -98,12 +101,13 @@ const styles = StyleSheet.create({
   contenedor: {
     padding: 40,
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#3c3c3c'
   },
   titulo: {
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: 'white'
   },
   input: {
     borderWidth: 1,
@@ -111,6 +115,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginBottom: 15,
     borderRadius: 10,
+    color: 'white' // El texto ingresado será blanco
   },
   cargandoContainer: {
     flex: 1,

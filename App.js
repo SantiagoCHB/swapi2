@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import { createNativeStackNavigator } from
 '@react-navigation/native-stack';
 
@@ -19,6 +19,18 @@ import Perfil from './src/componentes/Perfil';
 import Logout from './src/componentes/Logout';
 
 const Tab = createBottomTabNavigator();
+
+// Crea un tema personalizado basado en el DefaultTheme
+const MyTheme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: '#dark', // Cambia al color deseado
+    // Puedes personalizar primary, card, text, etc.
+  },
+};
+
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -44,22 +56,56 @@ if (cargando) {
 }
 
   return (
-  <NavigationContainer>
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
-    {usuario ? (
+  <NavigationContainer theme={MyTheme}>
+<Tab.Navigator
+  screenOptions={{
+    headerShown: false, 
+
+    tabBarStyle: {
+      backgroundColor: '#2b2b2b',
+    },
+    tabBarActiveTintColor: 'white',    
+    tabBarInactiveTintColor: '#adaaaa', 
+  }}
+>
+  {usuario ? (
     <>
-    <Tab.Screen name="Home" component={Home} />
-    <Tab.Screen name="Original" component={Original} />
-    <Tab.Screen name="Perfil" component={Perfil} />
-    <Tab.Screen name="Logout" component={Logout} />
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{ tabBarIcon: () => null }} 
+      />
+      <Tab.Screen
+        name="Original"
+        component={Original}
+        options={{ tabBarIcon: () => null }}
+      />
+      <Tab.Screen
+        name="Perfil"
+        component={Perfil}
+        options={{ tabBarIcon: () => null }}
+      />
+      <Tab.Screen
+        name="Logout"
+        component={Logout}
+        options={{ tabBarIcon: () => null }}
+      />
     </>
-    ) : (
+  ) : (
     <>
-    <Tab.Screen name="Login" component={Login} />
-    <Tab.Screen name="Registro" component={Registro} />
+      <Tab.Screen
+        name="Login"
+        component={Login}
+        options={{ tabBarIcon: () => null }}
+      />
+      <Tab.Screen
+        name="Registro"
+        component={Registro}
+        options={{ tabBarIcon: () => null }}
+      />
     </>
-    )}
-    </Tab.Navigator>
+  )}
+</Tab.Navigator>
   </NavigationContainer>
 
   );

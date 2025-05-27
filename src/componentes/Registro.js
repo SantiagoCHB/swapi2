@@ -60,9 +60,9 @@ onChangeText={setFecha} style={styles.input} />
 onChangeText={setTelefono} keyboardType="phone-pad"
 style={styles.input} />
 
-<Button title="Registrarse" onPress={handleRegistro} />
+<Button title="Registrarse" onPress={handleRegistro} color="black"  />
 <View style={{ marginTop: 10 }}>
-<Button title="¿Ya tienes cuenta? Inicia sesión" onPress={() =>
+<Button title="¿Ya tienes cuenta? Inicia sesión" color="black"  onPress={() =>
 navigation.navigate('Login')} />
 </View>
 

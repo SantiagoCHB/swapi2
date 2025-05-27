@@ -39,9 +39,9 @@ style={styles.input}
 secureTextEntry
 />
 
-<Button title="Ingresar" onPress={handleLogin} />
+<Button title="Ingresar" onPress={handleLogin} color="black" />
 <View style={{ marginTop: 10 }}>
-<Button title="¿No tienes cuenta? Regístrate" onPress={() =>
+<Button title="¿No tienes cuenta? Regístrate" color="black" onPress={() =>
 navigation.navigate('Registro')} />
 </View>
 </View>
